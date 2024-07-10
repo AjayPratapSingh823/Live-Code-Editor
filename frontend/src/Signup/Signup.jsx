@@ -15,7 +15,7 @@ const Signup = () => {
   const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
+    const { name, value} = e.target;
       setFormData({
         ...formData,
         [name]: value,
@@ -35,13 +35,13 @@ const Signup = () => {
     form.append('password', formData.password);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/user-signup', form, {
+      const response = await axios.post('http://localhost:8000/api/signup', form, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
       setMessage('User registration successful');
-      navigate('/user-login');
+      navigate('/login');
       console.log(response.data);
     } catch (err) {
       setMessage('User registration failed');
