@@ -82,7 +82,7 @@ const Signup = () => {
       {message && <p className="message">{message}</p>}
       
       <div className="extra-options">
-          <Link to="/user-login" className="link-option">Already have an account? Login</Link>
+          <Link to="/login" className="link-option">Already have an account? Login</Link>
       </div> 
     </div>
     </div>
